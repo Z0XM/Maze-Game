@@ -88,10 +88,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="assets\maps\map (1).txt" />
-    <Text Include="assets\maps\map (2).txt" />
-    <Text Include="assets\maps\map (3).txt" />
-    <Text Include="assets\maps\map (4).txt" />
-    <Text Include="assets\maps\map (5).txt" />
+    <Text Include="assets\maps\map %285%29.txt" />
+    <Text Include="assets\maps\map %284%29.txt" />
+    <Text Include="assets\maps\map %283%29.txt" />
+    <Text Include="assets\maps\map %282%29.txt" />
+    <Text Include="assets\maps\map %281%29.txt" />
+    <Text Include="assets\maps\map %286%29.txt" />
   </ItemGroup>
 </Project>

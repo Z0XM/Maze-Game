@@ -33,9 +33,9 @@ void Game::InitWindow()
 
 void Game::InitVariables()
 {
-    mapSize[0] = sf::Vector2i(23, 23); mapSize[1] = sf::Vector2i(37, 37); mapSize[2] = sf::Vector2i(53, 53); mapSize[3] = sf::Vector2i(61, 43); mapSize[4] = sf::Vector2i(353, 96);
+    mapSize[0] = sf::Vector2i(25, 25); mapSize[1] = sf::Vector2i(23, 23); mapSize[2] = sf::Vector2i(37, 37); mapSize[3] = sf::Vector2i(53, 53); mapSize[4] = sf::Vector2i(61, 43); mapSize[5] = sf::Vector2i(153, 96);
 	currentLvl = 1;
-    levels = 4;
+    levels = 5;
     visiblePath = false;
     hasGameStarted = false;
     setMap();

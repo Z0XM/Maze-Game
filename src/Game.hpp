@@ -10,7 +10,7 @@ class Game
 {
 private:
 	sf::Font font;
-	sf::Vector2i mapSize[5];
+	sf::Vector2i mapSize[6];
     int levels, currentLvl;
     sf::Sprite menuImg;
     Player player;
