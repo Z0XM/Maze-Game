@@ -105,14 +105,23 @@ bool Player::checkCollision() {
     return false;
 }
 void Player::findVacantSpot() {
-    int di = 0;
-    for (unsigned int i = 1; i < game->path.size(); i++) {
-        if (abs(game->path[i].hitbox.getGlobalCenter().x - hitbox.getGlobalCenter().x) <= abs(game->path[di].hitbox.getGlobalCenter().x - hitbox.getGlobalCenter().x) &&
-            abs(game->path[i].hitbox.getGlobalCenter().y - hitbox.getGlobalCenter().y) <= abs(game->path[di].hitbox.getGlobalCenter().y - hitbox.getGlobalCenter().y))di = i;
+    bool find = false;
+    for (int i = 0; i < game->wall.size(); i++)
+    {
+        if (hitbox.getGlobalCenter().x < game->wall[i].hitbox.right && hitbox.getGlobalCenter().x > game->wall[i].hitbox.left &&
+            hitbox.getGlobalCenter().y < game->wall[i].hitbox.top && hitbox.getGlobalCenter().y > game->wall[i].hitbox.bottom)
+            find = true;
     }
-    hitbox.setPosition(game->path[di].hitbox.getPosition());
-    shape.setPosition(hitbox.getGlobalCenter());
-    light.setPosition(hitbox.getGlobalCenter());
+    if (find) {
+        int di = 0;
+        for (unsigned int i = 1; i < game->path.size(); i++) {
+            if (abs(game->path[i].hitbox.getGlobalCenter().x - hitbox.getGlobalCenter().x) <= abs(game->path[di].hitbox.getGlobalCenter().x - hitbox.getGlobalCenter().x) &&
+                abs(game->path[i].hitbox.getGlobalCenter().y - hitbox.getGlobalCenter().y) <= abs(game->path[di].hitbox.getGlobalCenter().y - hitbox.getGlobalCenter().y))di = i;
+        }
+        hitbox.setPosition(game->path[di].hitbox.getPosition());
+        shape.setPosition(hitbox.getGlobalCenter());
+        light.setPosition(hitbox.getGlobalCenter());
+    }
 }
 void Player::checkPowerup() {
     if (Powerup::ActiveGroup.size() > 0) {
